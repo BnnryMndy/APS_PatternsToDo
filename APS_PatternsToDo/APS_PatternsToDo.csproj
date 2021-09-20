@@ -58,10 +58,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\AbstractBlock.cs" />
-    <Compile Include="UI\IFrame.cs" />
     <Compile Include="UI\IToDoImplement.cs" />
     <Compile Include="UI\LabelImplement.cs" />
-    <Compile Include="UI\ListFrame.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

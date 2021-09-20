@@ -21,5 +21,10 @@ namespace APS_PatternsToDo.UI
             label.Location = new System.Drawing.Point(50, 50);
             form.Controls.Add(label);
         }
+
+        public void setTask(string task)
+        {
+            item.setTask(task);
+        }
     }
 }
