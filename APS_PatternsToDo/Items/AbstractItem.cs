@@ -25,4 +25,24 @@ namespace APS_PatternsToDo.Items
 
 
     }
+
+    abstract class AbstractItem : IToDoItem
+    {
+        string task = "enter your task";
+
+        public void Action()
+        {
+            
+        }
+
+        public string getTask()
+        {
+            return task;
+        }
+
+        public void setTask(string task)
+        {
+            this.task = task;
+        }
+    }
 }

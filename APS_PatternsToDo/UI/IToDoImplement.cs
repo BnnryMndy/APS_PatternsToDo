@@ -11,5 +11,6 @@ namespace APS_PatternsToDo.UI
     {
         void RenderItem(Form form);
 
+        void setTask(string task);
     }
 }

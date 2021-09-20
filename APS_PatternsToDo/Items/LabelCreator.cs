@@ -14,16 +14,8 @@ namespace APS_PatternsToDo.Items
         }
     }
 
-    class LabelItem : IToDoItem
+    class LabelItem : AbstractItem
     {
-        public string getTask() {
-            return "xx";
-        }
-
-        public void Action()
-        {
-
-        }
-
+        
     }
 }

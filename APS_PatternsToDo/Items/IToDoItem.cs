@@ -10,6 +10,8 @@ namespace APS_PatternsToDo
     {
         string getTask();
 
+        void setTask(string task);
+
         void Action();
 
     }
