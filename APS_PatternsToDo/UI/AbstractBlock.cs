@@ -8,28 +8,42 @@ using System.Windows.Forms;
 
 namespace APS_PatternsToDo.UI
 {
-    abstract class Block : IToDoImplement
+    abstract class AbstractBlock : IToDoImplement
     {
         
         IToDoItem item;
-        Button addButton;
-        Button deleteButton;
+        Button addButton = new Button();
+        Button deleteButton = new Button();
 
+        
 
         public abstract void setItem();
 
+        public AbstractBlock()
+        {
+            addButton.Click += addTask;
+        }
+
         public void RenderItem(Form form)
         {
-            
-            Label label = new Label();
-            label.Text = item.getTask();
-            label.Location = new System.Drawing.Point(50, 50);
-            form.Controls.Add(label);
+            form.Controls.Add(addButton);
+
+            form.Controls.Add(deleteButton);
         }
 
         public void setTask(string task)
         {
             item.setTask(task);
+        }
+
+        public void addTask(object sender,EventArgs args)
+        {
+
+        }
+
+        public void deleteTask(object sender, EventArgs args)
+        {
+
         }
     }
 }
