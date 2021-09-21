@@ -16,7 +16,12 @@ namespace APS_PatternsToDo
         public Form1()
         {
             InitializeComponent();
+            
+            //TODO: delete this
+            PlainBlock labelBlock = new PlainBlock();
+            labelBlock.setForm(this);
 
+            labelBlock.RenderItem();
         }
 
 

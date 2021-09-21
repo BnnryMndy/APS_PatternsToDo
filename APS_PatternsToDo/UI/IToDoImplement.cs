@@ -9,7 +9,7 @@ namespace APS_PatternsToDo.UI
 {
     interface IToDoImplement
     {
-        void RenderItem(Form form);
+        void RenderItem();
 
         void setTask(string task);
     }
