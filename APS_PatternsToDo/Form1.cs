@@ -19,8 +19,8 @@ namespace APS_PatternsToDo
             
             //TODO: delete this
             PlainBlock labelBlock = new PlainBlock();
-            labelBlock.setForm(this);
-
+            labelBlock.SetForm(this);
+            labelBlock.InitBlock(0);
             labelBlock.RenderItem();
         }
 

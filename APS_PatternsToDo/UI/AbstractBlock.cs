@@ -19,30 +19,27 @@ namespace APS_PatternsToDo.UI
         protected ToolStripMenuItem plain = new ToolStripMenuItem("text");
         protected ToolStripMenuItem todo = new ToolStripMenuItem("todo");
         protected ToolStripMenuItem date = new ToolStripMenuItem("date");
-        //protected 
+        
         protected Form form;
-
-
-
 
 
         public abstract void SetItem();
 
-        public void setForm(Form form)
+        public void SetForm(Form form)
         {
             this.form = form;
         }
 
-        public AbstractBlock()
+        public void InitBlock(int y)
         {
-            //add button init
+            //add menu init
             plain.Click += PlainMenu_click;
             todo.Click += ToDoMenu_click;
             date.Click += DateMenu_click;
-            addMenu.Items.AddRange(new ToolStripItem[]{ plain, todo, date});
-            
+            addMenu.Items.AddRange(new ToolStripItem[] { plain, todo, date });
 
-            addButton.Location = new System.Drawing.Point(0, 0);
+
+            addButton.Location = new System.Drawing.Point(0, y);
             addButton.Width = 30;
             addButton.Height = 30;
             addButton.Text = "+";
@@ -52,16 +49,22 @@ namespace APS_PatternsToDo.UI
 
 
             //delete button init
-            //TODO: do this
+            deleteButton.Location = new System.Drawing.Point(form.Width - 60, y);
+            deleteButton.Width = 30;
+            deleteButton.Height = 30;
+            deleteButton.Text = "X";
+        }
 
-            
+        public AbstractBlock()
+        {
+
         }
 
         public void RenderItem()
         {
             form.Controls.Add(addButton);
 
-            //form.Controls.Add(deleteButton);
+            form.Controls.Add(deleteButton);
         }
 
         public void setTask(string task)
