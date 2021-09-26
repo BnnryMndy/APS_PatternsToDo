@@ -10,7 +10,7 @@ namespace APS_PatternsToDo.Items
     class ItemsList
     {
         private static ItemsList instance = new ItemsList();
-        private List<IToDoItem> items = new List<IToDoItem>();
+        private static List<IToDoItem> items = new List<IToDoItem>();
 
         private ItemsList() { }
 
@@ -27,7 +27,7 @@ namespace APS_PatternsToDo.Items
         public void AddItem(IToDoItem item)
         {
             items.Add(item);
-            item.setID(items.IndexOf(item));
+            item.setID(items.Count - 1);
             this.renderList();
         }
 
@@ -43,6 +43,7 @@ namespace APS_PatternsToDo.Items
             foreach (IToDoItem item in items)
             {
                 item.Render();
+                item.setID(items.IndexOf(item));
             }
         }
     }

@@ -18,6 +18,7 @@ namespace APS_PatternsToDo.UI
         protected IToDoItem newItem;
         public override void InitBlock(int ID)
         {
+            base.InitBlock(ID);
             //add menu init
             plain.Click += PlainMenu_click;
             todo.Click += ToDoMenu_click;
@@ -26,12 +27,13 @@ namespace APS_PatternsToDo.UI
             taskButton.ContextMenuStrip = addMenu;
             taskButton.Text = "+";
 
+            
             taskButton.Click += addTask;
             taskButton.Width = taskText.Height;
             taskButton.Height = taskText.Height;
             taskText.Location = new System.Drawing.Point(taskButton.Location.X + taskButton.Width, taskButton.Location.Y);
             taskText.Width = form.Width - taskButton.Width * 2;
-            base.InitBlock(ID);
+            
         }
 
         public override void RenderItem()
@@ -55,7 +57,7 @@ namespace APS_PatternsToDo.UI
 
         public void PlainMenu_click(object sender, EventArgs args)
         {
-
+            addTask(sender, args);
         }
 
         public void ToDoMenu_click(object sender, EventArgs args)

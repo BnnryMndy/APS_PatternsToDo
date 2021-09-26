@@ -56,6 +56,7 @@ namespace APS_PatternsToDo.Items
         public void setID(int id)
         {
             this.id = id;
+            implement.InitBlock(this.id);
         }
 
         public void setTask(string task)
@@ -65,8 +66,12 @@ namespace APS_PatternsToDo.Items
 
         public virtual void Render()
         {
-            //implement.setTask(task);
             implement.RenderItem();
         }
+
+        //public void Delete()
+        //{
+        //    implement.DeleteBlock();
+        //}
     }
 }

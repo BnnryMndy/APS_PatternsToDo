@@ -51,6 +51,7 @@ namespace APS_PatternsToDo.UI
             deleteButton.Width = 30;
             deleteButton.Height = 30;
             deleteButton.Text = "X";
+            //deleteButton.Click.;
             deleteButton.Click += DeleteButton_Click;
         }
 
@@ -85,6 +86,7 @@ namespace APS_PatternsToDo.UI
         {
             form.Controls.Clear();
             mediator.DeleteItem(blockID);
+            return;
         }
 
         public abstract void Action();

@@ -21,5 +21,7 @@ namespace APS_PatternsToDo
         void Action();
 
         void Render();
+
+        //void Delete();
     }
 }
