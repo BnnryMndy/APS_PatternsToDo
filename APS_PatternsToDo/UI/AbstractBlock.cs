@@ -1,4 +1,5 @@
-﻿using APS_PatternsToDo.Items;
+﻿using APS_PatternsToDo.Controllers;
+using APS_PatternsToDo.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,10 @@ namespace APS_PatternsToDo.UI
         
         protected IToDoItem item;
 
-        protected Button addButton = new Button();
+        protected Button taskButton = new Button();
         protected Button deleteButton = new Button();
-        protected ContextMenuStrip addMenu = new ContextMenuStrip();
-        protected ToolStripMenuItem plain = new ToolStripMenuItem("text");
-        protected ToolStripMenuItem todo = new ToolStripMenuItem("todo");
-        protected ToolStripMenuItem date = new ToolStripMenuItem("date");
-        
+
+        protected Mediator mediator = Mediator.getInstance();
         protected Form form;
 
 
@@ -32,24 +30,20 @@ namespace APS_PatternsToDo.UI
 
         public void InitBlock(int y)
         {
-            //add menu init
-            plain.Click += PlainMenu_click;
-            todo.Click += ToDoMenu_click;
-            date.Click += DateMenu_click;
-            addMenu.Items.AddRange(new ToolStripItem[] { plain, todo, date });
+           
 
+            //add button init
+            taskButton.Location = new System.Drawing.Point(0, y*50);
+            taskButton.Width = 30;
+            taskButton.Height = 30;
+            taskButton.Text = "+";
 
-            addButton.Location = new System.Drawing.Point(0, y);
-            addButton.Width = 30;
-            addButton.Height = 30;
-            addButton.Text = "+";
-
-            addButton.ContextMenuStrip = addMenu;
-            addButton.Click += addTask;
+            //taskButton.ContextMenuStrip = addMenu;
+            
 
 
             //delete button init
-            deleteButton.Location = new System.Drawing.Point(form.Width - 60, y);
+            deleteButton.Location = new System.Drawing.Point(form.Width - 60, y*50);
             deleteButton.Width = 30;
             deleteButton.Height = 30;
             deleteButton.Text = "X";
@@ -60,9 +54,9 @@ namespace APS_PatternsToDo.UI
 
         }
 
-        public void RenderItem()
+        public virtual void RenderItem()
         {
-            form.Controls.Add(addButton);
+            form.Controls.Add(taskButton);
 
             form.Controls.Add(deleteButton);
         }
@@ -72,30 +66,7 @@ namespace APS_PatternsToDo.UI
             item.setTask(task);
         }
 
-        public void addTask(object sender,EventArgs args)
-        {
 
-        }
-
-        public void DeleteTask(object sender, EventArgs args)
-        {
-
-        }
-
-        public void PlainMenu_click(object sender, EventArgs args)
-        {
-            
-        }
-
-        public void ToDoMenu_click(object sender, EventArgs args)
-        {
-
-        }
-
-        public void DateMenu_click(object sender, EventArgs args)
-        {
-
-        }
     }
 
     

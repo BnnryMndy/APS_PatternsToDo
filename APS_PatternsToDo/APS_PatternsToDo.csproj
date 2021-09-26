@@ -59,6 +59,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\AbstractBlock.cs" />
+    <Compile Include="UI\addTaskBlock.cs" />
     <Compile Include="UI\IToDoImplement.cs" />
     <Compile Include="UI\PlainBlock.cs" />
     <EmbeddedResource Include="Form1.resx">

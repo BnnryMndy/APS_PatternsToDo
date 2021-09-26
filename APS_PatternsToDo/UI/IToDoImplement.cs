@@ -9,6 +9,7 @@ namespace APS_PatternsToDo.UI
 {
     interface IToDoImplement
     {
+        
         void RenderItem();
 
         void setTask(string task);

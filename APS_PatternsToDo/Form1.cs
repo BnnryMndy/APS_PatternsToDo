@@ -1,4 +1,5 @@
-﻿using APS_PatternsToDo.UI;
+﻿using APS_PatternsToDo.Controllers;
+using APS_PatternsToDo.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,22 @@ namespace APS_PatternsToDo
         public Form1()
         {
             InitializeComponent();
-            
+
+            List<IToDoImplement> taskList = new List<IToDoImplement>();
+
             //TODO: delete this
-            PlainBlock labelBlock = new PlainBlock();
-            labelBlock.SetForm(this);
-            labelBlock.InitBlock(0);
-            labelBlock.RenderItem();
+            AddTaskBlock addTask = new AddTaskBlock();
+            addTask.SetForm(this);
+            addTask.InitBlock(35);
+            addTask.SetItem();
+            //addTask.RenderItem();
+
+            taskList.Add(addTask);
+
+            foreach (IToDoImplement item in taskList)
+            {
+                item.RenderItem();
+            }
         }
 
 

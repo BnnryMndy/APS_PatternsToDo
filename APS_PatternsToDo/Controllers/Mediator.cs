@@ -8,6 +8,14 @@ namespace APS_PatternsToDo.Controllers
 {
     class Mediator
     {
+        private static Mediator instance = new Mediator();
+        private Mediator() { }
+
+        public static Mediator getInstance()
+        {
+            return instance;
+        }
+
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APS_PatternsToDo.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,11 @@ namespace APS_PatternsToDo.Items
         public string getTask()
         {
             return task;
+        }
+
+        public virtual void Render(IToDoImplement toDoImplement)
+        {
+            toDoImplement.RenderItem();
         }
 
         public void setTask(string task)
