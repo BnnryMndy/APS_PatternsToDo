@@ -23,7 +23,7 @@ namespace APS_PatternsToDo.UI
             addMenu.Items.AddRange(new ToolStripItem[] { plain, todo, date });
             taskButton.ContextMenuStrip = addMenu;
             taskButton.Text = "+";
-            //taskText. = 12;
+            
             taskButton.Click += addTask;
             taskButton.Width = taskText.Height;
             taskButton.Height = taskText.Height;
@@ -35,15 +35,13 @@ namespace APS_PatternsToDo.UI
         public override void RenderItem()
         {
             
-            //taskText.Anchor = AnchorStyles.Right;
-            //taskText.Anchor = AnchorStyles.Bottom;
             form.Controls.Add(taskText);
             form.Controls.Add(taskButton);
         }
 
         public void addTask(object sender, EventArgs args)
         {
-
+            
         }
 
         public void DeleteTask(object sender, EventArgs args)

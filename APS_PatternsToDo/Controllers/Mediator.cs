@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APS_PatternsToDo.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace APS_PatternsToDo.Controllers
     class Mediator
     {
         private static Mediator instance = new Mediator();
+        private ItemsList itemsList = ItemsList.GetInstance();
         private Mediator() { }
 
         public static Mediator getInstance()
@@ -16,6 +18,16 @@ namespace APS_PatternsToDo.Controllers
             return instance;
         }
 
+
+        public void DeleteItem(int id)
+        {
+            itemsList.RemoveItem(id);
+        }
+
+        public void createItem()
+        {
+
+        }
 
     }
 }

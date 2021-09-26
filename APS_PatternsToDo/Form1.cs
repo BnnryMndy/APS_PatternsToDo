@@ -1,4 +1,5 @@
 ﻿using APS_PatternsToDo.Controllers;
+using APS_PatternsToDo.Items;
 using APS_PatternsToDo.UI;
 using System;
 using System.Collections.Generic;
@@ -18,21 +19,9 @@ namespace APS_PatternsToDo
         {
             InitializeComponent();
 
-            List<IToDoImplement> taskList = new List<IToDoImplement>();
+            ItemsList items = ItemsList.GetInstance();
 
-            //TODO: delete this
-            AddTaskBlock addTask = new AddTaskBlock();
-            addTask.SetForm(this);
-            addTask.InitBlock(35);
-            addTask.SetItem();
-            //addTask.RenderItem();
 
-            taskList.Add(addTask);
-
-            foreach (IToDoImplement item in taskList)
-            {
-                item.RenderItem();
-            }
         }
 
 

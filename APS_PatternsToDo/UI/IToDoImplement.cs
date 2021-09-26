@@ -12,6 +12,12 @@ namespace APS_PatternsToDo.UI
         
         void RenderItem();
 
+        int getID();
+
+        void InitBlock(int ID);
+
         void setTask(string task);
+
+        void DeleteBlock();
     }
 }

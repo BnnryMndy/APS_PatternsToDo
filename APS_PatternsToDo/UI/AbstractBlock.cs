@@ -12,7 +12,8 @@ namespace APS_PatternsToDo.UI
     abstract class AbstractBlock : IToDoImplement
     {
         
-        protected IToDoItem item;
+
+        protected int blockID;
 
         protected Button taskButton = new Button();
         protected Button deleteButton = new Button();
@@ -28,12 +29,12 @@ namespace APS_PatternsToDo.UI
             this.form = form;
         }
 
-        public void InitBlock(int y)
+        public void InitBlock(int ID)
         {
-           
 
+            blockID = ID;
             //add button init
-            taskButton.Location = new System.Drawing.Point(0, y*50);
+            taskButton.Location = new System.Drawing.Point(0, ID*50);
             taskButton.Width = 30;
             taskButton.Height = 30;
             taskButton.Text = "+";
@@ -43,10 +44,16 @@ namespace APS_PatternsToDo.UI
 
 
             //delete button init
-            deleteButton.Location = new System.Drawing.Point(form.Width - 60, y*50);
+            deleteButton.Location = new System.Drawing.Point(form.Width - 60, ID*50);
             deleteButton.Width = 30;
             deleteButton.Height = 30;
             deleteButton.Text = "X";
+            deleteButton.Click += DeleteButton_Click;
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            DeleteBlock();
         }
 
         public AbstractBlock()
@@ -63,9 +70,18 @@ namespace APS_PatternsToDo.UI
 
         public void setTask(string task)
         {
-            item.setTask(task);
+            //mediator.
         }
 
+        public int getID()
+        {
+            return blockID;
+        }
+
+        public void DeleteBlock()
+        {
+            mediator.DeleteItem(blockID);
+        }
 
     }
 
