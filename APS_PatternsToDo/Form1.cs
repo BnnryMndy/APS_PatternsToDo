@@ -21,7 +21,15 @@ namespace APS_PatternsToDo
 
             ItemsList items = ItemsList.GetInstance();
 
+            AddTask addMenu = new AddTask();
+            AddTaskBlock addTaskBlock = new AddTaskBlock();
+            addTaskBlock.SetForm(this);
+            
+            addMenu.InitImplement(addTaskBlock);
+            items.AddItem(addMenu);
+            
 
+            items.renderList();
         }
 
 

@@ -54,14 +54,16 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Items\AbstractItem.cs" />
+    <Compile Include="Items\AddTask.cs" />
     <Compile Include="Items\ItemsList.cs" />
     <Compile Include="Items\IToDoItem.cs" />
     <Compile Include="Items\LabelCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\AbstractBlock.cs" />
-    <Compile Include="UI\addTaskBlock.cs" />
+    <Compile Include="UI\AddTaskBlock.cs" />
     <Compile Include="UI\IToDoImplement.cs" />
+    <Compile Include="UI\PlainTextBlock.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

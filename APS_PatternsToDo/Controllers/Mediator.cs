@@ -24,9 +24,9 @@ namespace APS_PatternsToDo.Controllers
             itemsList.RemoveItem(id);
         }
 
-        public void createItem()
+        public void addItem(IToDoItem item)
         {
-
+            itemsList.AddItem(item);
         }
 
     }

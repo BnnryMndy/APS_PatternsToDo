@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APS_PatternsToDo.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,15 +28,18 @@ namespace APS_PatternsToDo.Items
         {
             items.Add(item);
             item.setID(items.IndexOf(item));
+            this.renderList();
         }
 
         public void RemoveItem(int itemID)
         {
             if(itemID > 0) items.RemoveAt(itemID);
+            renderList();
         }
 
         public void renderList()
         {
+
             foreach (IToDoItem item in items)
             {
                 item.Render();

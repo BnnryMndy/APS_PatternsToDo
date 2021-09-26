@@ -14,17 +14,12 @@ namespace APS_PatternsToDo
         void setID(int id);
 
         int getID();
+        void InitImplement(IToDoImplement toDoImplement);
 
         void setTask(string task);
 
         void Action();
 
-        void InitImplement(IToDoImplement toDoImplement);
-
-        
-
         void Render();
-
-
     }
 }

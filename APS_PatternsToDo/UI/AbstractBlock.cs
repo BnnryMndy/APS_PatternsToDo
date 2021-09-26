@@ -22,19 +22,22 @@ namespace APS_PatternsToDo.UI
         protected Form form;
 
 
-        public abstract void SetItem();
+        //public abstract void SetItem();
 
         public void SetForm(Form form)
         {
             this.form = form;
+            InitBlock(blockID);
         }
 
-        public void InitBlock(int ID)
+        
+
+        public virtual void InitBlock(int ID)
         {
 
             blockID = ID;
             //add button init
-            taskButton.Location = new System.Drawing.Point(0, ID*50);
+            taskButton.Location = new System.Drawing.Point(0, ID*36);
             taskButton.Width = 30;
             taskButton.Height = 30;
             taskButton.Text = "+";
@@ -44,7 +47,7 @@ namespace APS_PatternsToDo.UI
 
 
             //delete button init
-            deleteButton.Location = new System.Drawing.Point(form.Width - 60, ID*50);
+            deleteButton.Location = new System.Drawing.Point(form.Width - 60, ID*36);
             deleteButton.Width = 30;
             deleteButton.Height = 30;
             deleteButton.Text = "X";
@@ -68,7 +71,7 @@ namespace APS_PatternsToDo.UI
             form.Controls.Add(deleteButton);
         }
 
-        public void setTask(string task)
+        public virtual void setTask(string task)
         {
             //mediator.
         }
@@ -80,9 +83,11 @@ namespace APS_PatternsToDo.UI
 
         public void DeleteBlock()
         {
+            form.Controls.Clear();
             mediator.DeleteItem(blockID);
         }
 
+        public abstract void Action();
     }
 
     

@@ -12,7 +12,11 @@ namespace APS_PatternsToDo.UI
         
         void RenderItem();
 
+        void Action();
+
         int getID();
+
+        void SetForm(Form form);
 
         void InitBlock(int ID);
 

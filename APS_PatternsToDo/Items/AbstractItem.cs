@@ -29,14 +29,12 @@ namespace APS_PatternsToDo.Items
 
     abstract class AbstractItem : IToDoItem
     {
-        string task = "enter your task";
-        private int id;
-        IToDoImplement toDoImplement;
-        ItemsList itemsList = ItemsList.GetInstance();
-
-        public void Action()
+        protected string task = "enter your task";
+        protected int id;
+        protected ItemsList itemsList = ItemsList.GetInstance();
+        public IToDoImplement implement;
+        public virtual void Action()
         {
-            
         }
 
         public int getID()
@@ -51,15 +49,9 @@ namespace APS_PatternsToDo.Items
 
         public void InitImplement(IToDoImplement toDoImplement)
         {
-            this.toDoImplement = toDoImplement;
-            toDoImplement.InitBlock(id);
+            this.implement = toDoImplement;
         }
 
-
-        public  void Render()
-        {
-            toDoImplement.RenderItem();
-        }
 
         public void setID(int id)
         {
@@ -69,6 +61,12 @@ namespace APS_PatternsToDo.Items
         public void setTask(string task)
         {
             this.task = task;
+        }
+
+        public virtual void Render()
+        {
+            //implement.setTask(task);
+            implement.RenderItem();
         }
     }
 }
