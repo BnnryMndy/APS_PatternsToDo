@@ -18,22 +18,21 @@ namespace APS_PatternsToDo.UI
         protected IToDoItem newItem;
         public override void InitBlock(int ID)
         {
-            base.InitBlock(ID);
-            //add menu init
-            plain.Click += PlainMenu_click;
-            todo.Click += ToDoMenu_click;
-            date.Click += DateMenu_click;
-            addMenu.Items.AddRange(new ToolStripItem[] { plain, todo, date });
-            taskButton.ContextMenuStrip = addMenu;
-            taskButton.Text = "+";
-
+            if (!hasEvents) taskButton.Click += addTask;
+            if (!hasEvents) plain.Click += PlainMenu_click;
+            if (!hasEvents) todo.Click += ToDoMenu_click;
+            if (!hasEvents) date.Click += DateMenu_click;
             
-            taskButton.Click += addTask;
+            base.InitBlock(ID);
+
+            addMenu.Items.AddRange(new ToolStripItem[] { plain, todo, date });
+            
+            taskButton.ContextMenuStrip = addMenu;
+            taskButton.Text = "+";       
             taskButton.Width = taskText.Height;
             taskButton.Height = taskText.Height;
             taskText.Location = new System.Drawing.Point(taskButton.Location.X + taskButton.Width, taskButton.Location.Y);
             taskText.Width = form.Width - taskButton.Width * 2;
-            
         }
 
         public override void RenderItem()
@@ -51,7 +50,6 @@ namespace APS_PatternsToDo.UI
             plainTextBlock.SetForm(form);
             newItem.InitImplement(plainTextBlock);
             newItem.setTask(taskText.Text);
-            //newItem.
             this.Action();
         }
 

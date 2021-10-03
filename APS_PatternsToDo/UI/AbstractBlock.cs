@@ -14,7 +14,7 @@ namespace APS_PatternsToDo.UI
         
 
         protected int blockID;
-
+        protected bool hasEvents = false;
         protected Button taskButton = new Button();
         protected Button deleteButton = new Button();
 
@@ -36,7 +36,6 @@ namespace APS_PatternsToDo.UI
         {
 
             blockID = ID;
-            //add button init
             taskButton.Location = new System.Drawing.Point(0, ID*36);
             taskButton.Width = 30;
             taskButton.Height = 30;
@@ -51,8 +50,12 @@ namespace APS_PatternsToDo.UI
             deleteButton.Width = 30;
             deleteButton.Height = 30;
             deleteButton.Text = "X";
-            //deleteButton.Click.;
-            deleteButton.Click += DeleteButton_Click;
+            if (!hasEvents)
+            {
+                deleteButton.Click += DeleteButton_Click;
+                hasEvents = true;
+            }
+             
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)

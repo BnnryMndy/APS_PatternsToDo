@@ -16,7 +16,14 @@ namespace APS_PatternsToDo.UI
             throw new NotImplementedException();
         }
 
-        
+        public override void InitBlock(int ID)
+        {
+            base.InitBlock(ID);
+            label.Text = task;
+            label.Location = new System.Drawing.Point(0, deleteButton.Location.Y);
+            label.Size = new System.Drawing.Size(form.Width - deleteButton.Size.Width * 2, deleteButton.Size.Height);
+            label.BorderStyle = BorderStyle.FixedSingle;
+        }
 
         public override void setTask(string task)
         {
@@ -25,10 +32,6 @@ namespace APS_PatternsToDo.UI
 
         public override void RenderItem()
         {
-            label.Text = task;
-            label.Location = new System.Drawing.Point(0, deleteButton.Location.Y);
-            label.Size = new System.Drawing.Size(form.Width - deleteButton.Size.Width*2, deleteButton.Size.Height);
-            label.BorderStyle = BorderStyle.Fixed3D;
             form.Controls.Add(label);
             form.Controls.Add(deleteButton);
         }

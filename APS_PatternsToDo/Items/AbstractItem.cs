@@ -11,20 +11,6 @@ namespace APS_PatternsToDo.Items
     {
         public abstract IToDoItem FactoryMethod();
 
-        public void Action()
-        {
-            var item = FactoryMethod();
-
-            item.Action();
-        }
-
-        public string getTask()
-        {
-            var item = FactoryMethod();
-            return item.getTask();
-        }
-
-
     }
 
     abstract class AbstractItem : IToDoItem
