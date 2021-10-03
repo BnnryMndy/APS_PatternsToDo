@@ -37,6 +37,11 @@ namespace APS_PatternsToDo.Items
             renderList();
         }
 
+        public void ActionItem(int id)
+        {
+            items.ElementAt(id).Action();
+        }
+
         public void renderList()
         {
 

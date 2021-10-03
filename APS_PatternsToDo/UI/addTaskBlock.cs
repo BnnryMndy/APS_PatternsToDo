@@ -60,7 +60,14 @@ namespace APS_PatternsToDo.UI
 
         public void ToDoMenu_click(object sender, EventArgs args)
         {
+            CheckItemCreator itemCreator = new CheckItemCreator();
+            newItem = itemCreator.FactoryMethod();
+            CheckBlock checkBlock = new CheckBlock();
 
+            checkBlock.SetForm(form);
+            newItem.InitImplement(checkBlock);
+            newItem.setTask(taskText.Text);
+            this.Action();
         }
 
         public void DateMenu_click(object sender, EventArgs args)

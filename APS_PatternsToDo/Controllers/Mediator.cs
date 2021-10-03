@@ -29,5 +29,10 @@ namespace APS_PatternsToDo.Controllers
             itemsList.AddItem(item);
         }
 
+        public void ActionItem(int id)
+        {
+            
+        }
+
     }
 }

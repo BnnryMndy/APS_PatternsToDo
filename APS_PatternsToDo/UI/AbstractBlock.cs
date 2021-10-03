@@ -77,7 +77,6 @@ namespace APS_PatternsToDo.UI
 
         public virtual void setTask(string task)
         {
-            //mediator.
         }
 
         public int getID()
@@ -89,7 +88,6 @@ namespace APS_PatternsToDo.UI
         {
             form.Controls.Clear();
             mediator.DeleteItem(blockID);
-            return;
         }
 
         public abstract void Action();

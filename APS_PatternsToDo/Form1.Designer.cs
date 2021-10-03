@@ -38,7 +38,7 @@ namespace APS_PatternsToDo
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Super TODO";
             this.ResumeLayout(false);
 
         }

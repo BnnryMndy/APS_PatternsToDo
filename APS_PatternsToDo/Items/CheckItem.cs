@@ -16,6 +16,16 @@ namespace APS_PatternsToDo.Items
 
     class CheckItem : AbstractItem
     {
+        bool item = false;
+
+        public override void Action()
+        {
+            item = !item;
+            base.Action();
+        }
+
+        
+
         public override void Render()
         {
             implement.InitBlock(id);

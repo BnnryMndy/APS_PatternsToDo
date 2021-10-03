@@ -7,13 +7,5 @@ using System.Threading.Tasks;
 
 namespace APS_PatternsToDo.Items
 {
-    class AddTask : AbstractItem
-    {
-
-        public override void Action()
-        {
-            //implement.Action();
-        }
-
-    }
+    class AddTask : AbstractItem {}
 }
